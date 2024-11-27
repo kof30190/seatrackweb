@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import {
   AppBar,
@@ -14,6 +14,8 @@ import {
   WbSunny as WeatherIcon,
   Person as ProfileIcon,
 } from '@mui/icons-material';
+import { useRouter } from 'next/router';
+import { useAuth } from '../contexts/AuthContext';
 
 const PREFIX = 'Home';
 
@@ -56,6 +58,15 @@ const Root = styled('div')(({ theme }) => ({
 }));
 
 export default function Home() {
+  const { user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth/login');
+    }
+  }, [user, router]);
+
   const menuItems = [
     {
       title: 'Navigation',

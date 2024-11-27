@@ -83,22 +83,22 @@ export default function ProfilePage() {
     {
       icon: <PersonIcon />,
       text: 'Informations personnelles',
-      onClick: () => console.log('Informations personnelles'),
+      onClick: () => window.location.href = '/profile/personal-info',
     },
     {
       icon: <BoatIcon />,
       text: 'Mon bateau',
-      onClick: () => console.log('Mon bateau'),
+      onClick: () => window.location.href = '/profile/boat',
     },
     {
       icon: <SettingsIcon />,
       text: 'Paramètres',
-      onClick: () => console.log('Paramètres'),
+      onClick: () => console.log('Paramètres - À venir'),
     },
     {
       icon: <HelpIcon />,
       text: 'Aide',
-      onClick: () => console.log('Aide'),
+      onClick: () => console.log('Aide - À venir'),
     },
   ];
 
